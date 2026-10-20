@@ -1,0 +1,13 @@
+{
+  "name": "api-free-fire",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/server.js",
+    "db:init": "node --env-file-if-exists=.env src/init-db.js",
+    "check": "node --check src/server.js && node --check src/init-db.js"
+  },
+  "dependencies": { "pg": "^8.16.3" }
+}
