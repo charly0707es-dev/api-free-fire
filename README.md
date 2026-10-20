@@ -62,4 +62,6 @@ En Update Row, busca por id y asigna cada columna desde $json.id, $json.nombre, 
 
 ## Comprobaciones
 
-GET /api/personajes debe devolver cinco registros iniciales. /api/personajes/1 devuelve uno, /api/personajes/999 devuelve 404, /api/personajes/abc devuelve 400. Si /health devuelve 503, revisa que PostgreSQL este disponible. Si /health funciona pero los personajes dan 503, ejecuta db:init.
+GET /api/personajes debe devolver 50 registros iniciales, con IDs del 1 al 50 y nombres distintos. /api/personajes/1 devuelve uno, /api/personajes/50 devuelve Orion, /api/personajes/999 devuelve 404, /api/personajes/abc devuelve 400. Si /health devuelve 503, revisa que PostgreSQL este disponible. Si /health funciona pero los personajes dan 503, ejecuta db:init.
+
+El catalogo usa nombres de personajes y habilidades simplificadas de practica, no estadisticas oficiales actualizadas. Al actualizar desde la version de cinco registros, db:init agrega los IDs faltantes sin borrar ni sobrescribir los existentes. Para actualizar localmente: npm.cmd run db:init. En Render se ejecuta automaticamente al iniciar el servicio.
